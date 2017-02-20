@@ -1,0 +1,12 @@
+{
+  "name": "react-ui-components",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "react-native-vector-icons": "^4.0.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,6 @@
+export { About } from './About'
+export { AccountSecurity } from './AccountSecurity'
+export { General } from './General'
+export { HelpAndFeedback } from './HelpAndFeedback'
+export { Notifications } from './Notifications'
+export { Privacy } from './Privacy'
