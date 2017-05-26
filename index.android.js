@@ -3,51 +3,24 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StackNavigator, TabNavigator } from "react-navigation";
+import { AppRegistry, View, Text, Button } from 'react-native';
+import { Chat, Contact, Discover, Me } from './page-components';
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator';
 
-export default class rnDemo extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+const rnDemo = StackNavigator({
+  Chat: { screen: Chat },
+  Contact: { screen: Contact },
+  Discover: { screen: Discover },
+  Me: { screen: Me },
+},{
+  initialRouteName: 'Chat',
+  mode: 'modal',
+  headerMode: 'none',
+  /*transitionConfig: () => ({
+    screenInterpolator:CardStackStyleInterpolator.forHorizontal,
+  })*/
 });
 
 AppRegistry.registerComponent('rnDemo', () => rnDemo);

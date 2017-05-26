@@ -139,7 +139,7 @@ class Discover extends Component {
                           style={{backgroundColor:'#353637'}} 
                           statusBarStyle={{barStyle:'light-content'}}
                         />;
-    let toolBar = <CommonToolBar router={this.props.router} navigator={this.props.navigator} currentTab='discover' />;
+    let toolBar = <CommonToolBar navigation={this.props.navigation} currentTab='discover' />;
     let sideBar = <SideBar show={this.state.showSideBar} ><Text>侧边栏</Text></SideBar>;
     return (
       <PageTemplate 

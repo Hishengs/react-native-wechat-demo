@@ -11,6 +11,13 @@ import { CommonToolBar, ChatListItem, PageTemplate } from '../'
 import chatItems from '../../static/data/chatItems.js'
 
 class Chat extends Component {
+  static navigationOptions = {
+    title: '微信',
+    headerTintColor: '#fff',
+    headerStyle: {
+      backgroundColor: '#353637'
+    }
+  }
   constructor (props) {
     super(props)
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -60,7 +67,7 @@ class Chat extends Component {
                       </TouchableHighlight>
                     )} 
                   />;
-    let toolBar = <CommonToolBar router={this.props.router} navigator={this.props.navigator} currentTab='home' />;
+    let toolBar = <CommonToolBar navigation={this.props.navigation} currentTab='home' />;
     let sideBar = <SideBar show={this.state.showSideBar} ><Text>侧边栏</Text></SideBar>;
     return (
       <PageTemplate 

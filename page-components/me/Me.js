@@ -132,7 +132,7 @@ class Me extends Component {
           style={{backgroundColor:'#353637'}} 
           statusBarStyle={{barStyle:'light-content'}}
         />
-        <CommonToolBar router={this.props.router} navigator={this.props.navigator} currentTab='me' />
+        <CommonToolBar navigation={this.props.navigation} currentTab='me' />
         <SideBar show={this.state.showSideBar} >
           <Text>侧边栏</Text>
         </SideBar>

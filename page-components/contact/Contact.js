@@ -75,7 +75,7 @@ class Contact extends Component {
                             </TouchableHighlight>
                           )} 
                         />;
-    let toolBar = <CommonToolBar router={this.props.router} navigator={this.props.navigator} currentTab='contact' />;
+    let toolBar = <CommonToolBar navigation={this.props.navigation} currentTab='contact' />;
     let sideBar = <SideBar show={this.state.showSideBar} ><Text>侧边栏</Text></SideBar>;
     return (
       <PageTemplate 
