@@ -5,18 +5,66 @@ import {
   TouchableHighlight,
   Text,
   ListView,
+  ScrollView,
+  Modal
 } from 'react-native';
 import { NavigationBar, Icon, SideBar } from '../../ui-components'
 import { CommonToolBar, ChatListItem, PageTemplate } from '../'
 import chatItems from '../../static/data/chatItems.js'
 
+class ModalExample extends Component {
+
+  state = {
+    modalVisible: true,
+  }
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
+
+  render() {
+    return (
+      <View style={{marginTop: 22}}>
+        <Modal
+          animationType={"slide"}
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {alert("Modal has been closed.")}}
+          >
+         <View style={{marginTop: 22}}>
+          <View>
+            <Text>Hello World!</Text>
+
+            <TouchableHighlight onPress={() => {
+              this.setModalVisible(!this.state.modalVisible)
+            }}>
+              <Text>Hide Modal</Text>
+            </TouchableHighlight>
+
+          </View>
+         </View>
+        </Modal>
+
+        <TouchableHighlight onPress={() => {
+          this.setModalVisible(true)
+        }}>
+          <Text>Show Modal</Text>
+        </TouchableHighlight>
+
+      </View>
+    );
+  }
+}
+
 class Chat extends Component {
   static navigationOptions = {
     title: '微信',
-    headerTintColor: '#fff',
+    headerTitleStyle: {
+      color: '#fff',
+    },
     headerStyle: {
-      backgroundColor: '#353637'
-    }
+      backgroundColor: '#353637',
+    },
   }
   constructor (props) {
     super(props)
@@ -32,7 +80,9 @@ class Chat extends Component {
     })
   }
   render() {
-    let listView = 
+    let listView =
+                  <ScrollView>
+                  <ModalExample/>
                   <ListView 
                     style={styles.chatList}
                     dataSource={this.state.chatItems} 
@@ -54,7 +104,9 @@ class Chat extends Component {
                         </View>
                       </View>
                     )}
-                  />;
+                  />
+                  </ScrollView>
+                  ;
     let navigationBar = 
                   <NavigationBar 
                     title='微信' 
@@ -111,7 +163,8 @@ const styles = StyleSheet.create({
   },
   chatList: {
     flex: 1,
-    marginBottom: 50,
+    marginTop: -65,
+    /*marginBottom: 50,*/
   },
 });
 

@@ -31,11 +31,14 @@ class PageTemplate extends Component {
     let toolBar = this.props.toolBar || null;
     let sideBar = this.props.sideBar || null;
     return (
-      <View style={{flex:1,position:'relative',backgroundColor:this.props.backgroundColor||'#efeff4'}} >
+      /*<View style={{flex:1,position:'relative',backgroundColor:this.props.backgroundColor||'#efeff4'}} >
         {contentView}
         {navigationBar}
         {toolBar}
         {sideBar}
+      </View>*/
+      <View style={{flex:1,position:'relative',backgroundColor:this.props.backgroundColor||'#efeff4'}} >
+        {contentView}
       </View>
     );
   }

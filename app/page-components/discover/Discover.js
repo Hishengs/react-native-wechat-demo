@@ -22,6 +22,15 @@ import {
 } from '../'
 
 class Discover extends Component {
+  static navigationOptions = {
+    title: '发现',
+    headerTitleStyle: {
+      color: '#fff',
+    },
+    headerStyle: {
+      backgroundColor: '#353637',
+    },
+  }
   constructor (props) {
     super(props)
     this.state = {
@@ -161,7 +170,8 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+    marginTop: -55,
   },
   backgroundTip: {
     justifyContent: 'center',

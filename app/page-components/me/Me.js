@@ -23,6 +23,15 @@ import {
 } from '../'
 
 class Me extends Component {
+  static navigationOptions = {
+    title: '我',
+    headerTitleStyle: {
+      color: '#fff',
+    },
+    headerStyle: {
+      backgroundColor: '#353637',
+    },
+  }
   constructor (props) {
     super(props)
     this.state = {
@@ -126,7 +135,7 @@ class Me extends Component {
           </View>
 
         </ScrollView>
-        <NavigationBar 
+        {/*<NavigationBar
           title={this.state.title} 
           titleStyle={{color:'white'}} 
           style={{backgroundColor:'#353637'}} 
@@ -135,7 +144,7 @@ class Me extends Component {
         <CommonToolBar navigation={this.props.navigation} currentTab='me' />
         <SideBar show={this.state.showSideBar} >
           <Text>侧边栏</Text>
-        </SideBar>
+        </SideBar>*/}
       </View>
     );
   }
@@ -155,7 +164,8 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+    marginTop: -55,
   },
   backgroundTip: {
     justifyContent: 'center',
